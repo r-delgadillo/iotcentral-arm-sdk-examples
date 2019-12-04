@@ -34,7 +34,7 @@ monotonic==1.5
 msrest==0.5.1
 msrestazure==0.4.33
 oauthlib==2.1.0
-paramiko==2.4.1
+paramiko==2.4.2
 pyasn1==0.4.3
 pycparser==2.18
 Pygments==2.2.0
