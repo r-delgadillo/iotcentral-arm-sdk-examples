@@ -6,7 +6,7 @@ This repository contains examples of creating, updating, and removing [IoT Centr
 
 | platform | source | package |
 |--|--- |----|
-| node | https://github.com/Azure/azure-sdk-for-node | https://www.npmjs.com/package/azure-arm-iotcentral |
+| node | https://github.com/Azure/azure-sdk-for-node | https://www.npmjs.com/package/@azure/arm-iotcentral |
 | python | https://github.com/Azure/azure-sdk-for-python | https://pypi.org/project/azure-mgmt-iotcentral |
 | .NET | https://github.com/Azure/azure-sdk-for-net | https://www.nuget.org/packages/Microsoft.Azure.Management.IotCentral |
 | ruby | https://github.com/Azure/azure-sdk-for-ruby | https://rubygems.org/gems/azure_mgmt_iot_central |
