@@ -1,6 +1,6 @@
 import * as msRestNodeAuth from "@azure/ms-rest-nodeauth";
 import { IotCentralClient } from "@azure/arm-iotcentral";
-import { App, OperationInputs } from "@azure/arm-iotcentral/lib/models/index";
+import { App, OperationInputs } from "@azure/arm-iotcentral/src/models/index";
 
 const SUBSCRIPTIONID: string = "FILL IN SUB ID";
 const RESOURCEGROUPNAME: string = "myResourceGroup";
