@@ -60,5 +60,5 @@ result = apps.list_by_resource_group(resourceGroup)
 pp result
 
 # delete app
-deleteResult = apps.delete(resourceGroup, name)
-pp deleteResult
+# deleteResult = apps.delete(resourceGroup, name)
+# pp deleteResult
