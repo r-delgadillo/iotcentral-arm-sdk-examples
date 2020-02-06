@@ -6,7 +6,7 @@ astroid==1.6.5
 azure-cli-core==2.0.38
 azure-cli-nspkg==3.0.2
 azure-common==1.1.12
-azure-mgmt-iotcentral===2017-07-01-privatepreview
+azure-mgmt-iotcentral===2.0.0
 azure-mgmt-nspkg==2.0.0
 azure-nspkg==2.0.0
 backports.functools-lru-cache==1.5
