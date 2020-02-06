@@ -1,6 +1,6 @@
 # iotcentral-arm-sdk-examples-nodejs
 
-Sample code for using [@azure/arm-iotcentral](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/iotcentral/arm-iotcentral)  SDK provided by [Microsoft Azure](https://github.com/Azure). This sample code simply let user to login, check if the resource name is available, create or update an app, retrieve app information, and finally delete the app if uncommented it.
+Sample code for using [@azure/arm-iotcentral](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/iotcentral/arm-iotcentral)  SDK provided by [Microsoft Azure](https://github.com/Azure). This sample code simply let user to login, check if the resource name is available, create or update an app, retrieve app information, update app and finally delete the app if uncommented it.
 
 ## Getting started
 
@@ -17,6 +17,5 @@ npm install
 ### Usage
 Make sure you head over to the index.ts to change the configuration to the one that is shown on your [Microsoft Azure Portal](https://portal.azure.com).
 ```
-tsc
-node index.js
+npm run nodejs
 ```
