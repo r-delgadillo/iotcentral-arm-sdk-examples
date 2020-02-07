@@ -23,3 +23,5 @@ Make sure you head over to the run.py to change the configuration to the one tha
 ```
 .\go.exe
 ```
+
+Ever wonder what Azure SDK for Go provide in terms of iotcentral? Check [this](https://pkg.go.dev/github.com/Azure/azure-sdk-for-go/services/iotcentral/mgmt/2018-09-01/iotcentral) out.

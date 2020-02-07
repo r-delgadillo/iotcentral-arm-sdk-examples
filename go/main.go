@@ -12,9 +12,12 @@ func main() {
 	subscriptionID := ""
 	ioTCentralClient := iotcentral.NewAppsClient(subscriptionID)
 
+	// There are multiple way to authericate with Azure, we picked the device token way which is
 	// Sign in through https://microsoft.com/devicelogin (works for account with 2FA)
 	// Service Principals in Azure AD would get you information for the following
 	// make sure to have your app set for the Redirect URIs, otherwise, it won't work
+	// Check out this article in case you want other ways to authericate https://docs.microsoft.com/en-us/azure/go/azure-sdk-go-authorization
+	// sample code for Authentication with Azure, check this out https://github.com/Azure/azure-sdk-for-go#authentication
 	applicationID := "" // client id
 	tenantID := ""
 	deviceConfig := auth.NewDeviceFlowConfig(applicationID, tenantID)
