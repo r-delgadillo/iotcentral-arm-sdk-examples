@@ -1,32 +1,32 @@
 import * as msRestAzure from 'ms-rest-azure';
 import ResourceManagementClient from 'azure-arm-resource/lib/resource/resourceManagementClient';
 
-const location = `eastus`;
+const location = `unitedstates`;
 const uniqueIdentifier = Date.now();
 const paidAppName = `iotc-arm-paid-${location}-${uniqueIdentifier}`;
 const apiVersion = '2018-09-01';
 
 const appTemplates = {
-    contoso: 'iotc-demo@1.0.0',
-    pnp: 'iotc-pnp-preview@1.0.0'
+    default: "iotc-default@1.0.0",
+    pnp: "iotc-pnp-preview"
 };
 
 const iotAppPaidArmTemplate = {
-    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "resources": [
+    $schema: "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    contentVersion: "1.0.0.0",
+    resources: [
         {
-            "type": "Microsoft.IoTCentral/IoTApps",
-            "name": paidAppName,
-            "sku": {
-                "name": "S1"
+            type: "Microsoft.IoTCentral/IoTApps",
+            name: paidAppName,
+            sku: {
+                name: "ST2"
             },
-            "location": location,
-            "apiVersion": apiVersion,
-            "properties": {
-                "displayName": paidAppName,
-                "subdomain": paidAppName,
-                "template": `${appTemplates.contoso}`
+            location: location,
+            apiVersion: apiVersion,
+            properties: {
+                displayName: paidAppName,
+                subdomain: paidAppName,
+                template: `${appTemplates.default}`
             }
         }
     ]
