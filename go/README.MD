@@ -1,6 +1,6 @@
 # iotcentral-arm-sdk-examples-go
 
-Sample code for using [iotcentral](https://github.com/Azure/azure-sdk-for-go/releases/tag/v37.1.0) SDK provided by [Microsoft Azure](https://github.com/Azure). This sample code simply check if the resource name is available, create or update an app, retrieve app information, update app, list all the apps that belongs to the specific resource group, and finally delete the app if uncommented it.
+Sample code for using [iotcentral](https://github.com/Azure/azure-sdk-for-go/releases/tag/v37.1.0) SDK provided by [Microsoft Azure](https://github.com/Azure). This sample code will check if the resource name is available, create or update an app, retrieve app information, update app, list all the apps that belongs to the specific resource group, and finally delete the app if uncommented.
 
 ## Getting started
 

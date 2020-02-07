@@ -53,6 +53,12 @@ async function updateApp(client): Promise<IotCentralClient> {
     return new Promise<IotCentralClient>(resolve => resolve(client));
 }
 
+async function listAllAppsByResourceGroup(client): Promise<IotCentralClient> {
+    const result = await client.apps.listByResourceGroup(RESOURCEGROUPNAME);
+    console.log(result);
+    return new Promise<IotCentralClient>(resolve => resolve(client));
+}
+
 // async function deleteApp(client): Promise<IotCentralClient> {
 //     const result = await client.apps.deleteMethod(RESOURCEGROUPNAME, RESOURCENAME);
 //     console.log(result);
@@ -64,6 +70,7 @@ login()
     .then(createOrUpdateApp)
     .then(retrieveAppInfo)
     .then(updateApp)
+    .then(listAllAppsByResourceGroup)
     // .then(deleteApp)
     .then(() => {
         console.log("done");
