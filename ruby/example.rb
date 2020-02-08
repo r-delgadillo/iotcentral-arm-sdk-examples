@@ -1,9 +1,6 @@
 require "azure_mgmt_iot_central"
 require "ms_rest_azure"
 
-puts "Hello World!"
-
-
 # TODO: Fill this in
 provider = MsRestAzure::ApplicationTokenProvider.new(
        'tenant_id',
@@ -20,19 +17,48 @@ options = {
     credentials: credentials
 }
 
+# TODO: Add name and resourceGroup
+name = 'some-app-name'
+resourceGroup = 'myResourceGroup'
+
+app =  Azure::IotCentral::Mgmt::V2018_09_01::Models::App::new()
+app.location = 'unitedstates'
+app.display_name = 'Ruby SDK Application'
+app.subdomain = name
+
+skuInfo =  Azure::IotCentral::Mgmt::V2018_09_01::Models::AppSkuInfo::new()
+skuInfo.name = 'ST2'
+
+app.sku = skuInfo
+
 c = Azure::IotCentral::Profiles::Latest::Mgmt::Client::new(options)
 apps =  Azure::IotCentral::Mgmt::V2018_09_01::Apps::new(c)
-app =  Azure::IotCentral::Mgmt::V2018_09_01::Models::App::new()
-skuInfo =  Azure::IotCentral::Mgmt::V2018_09_01::Models::AppSkuInfo::new()
-skuInfo.name = 'ST1'
-app.location = 'eastus'
-app.display_name = 'Ruby SDK Application'
-# TODO: Add subdomain
-app.subdomain = 'ENTER SUBDOMAIN HERE'
-app.sku = skuInfo
-# TODO: Add resource group name, resource name
-newapp = apps.create_or_update('RESOURCE GROUP HERE', 'RESOURCE NAME HERE (often same as subdomain)', app)
-pp newapp
-result = apps.list_by_subscription()
 
+# check if the name available
+operationInputs = Azure::IotCentral::Mgmt::V2018_09_01::Models::OperationInputs::new()
+operationInputs.name = name
+nameAvailable = apps.check_name_availability(operationInputs)
+pp nameAvailable
+
+# create app
+newapp = apps.create_or_update(resourceGroup, name, app)
+pp newapp
+
+# get app
+getApp = apps.get(resourceGroup, name)
+pp getApp
+
+appPatch =  Azure::IotCentral::Mgmt::V2018_09_01::Models::AppPatch::new()
+appPatch.display_name = name + '-new-name'
+
+# update app
+updateApp = apps.update(resourceGroup, name, appPatch)
+pp updateApp
+
+# list apps under the resource group
+result = apps.list_by_resource_group(resourceGroup)
 pp result
+
+# delete app
+# deleteResult = apps.delete(resourceGroup, name)
+# pp deleteResult
